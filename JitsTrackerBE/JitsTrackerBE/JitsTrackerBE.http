@@ -1,0 +1,6 @@
+@JitsTrackerBE_HostAddress = http://localhost:5296
+
+GET {{JitsTrackerBE_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
