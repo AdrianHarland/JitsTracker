@@ -31,3 +31,4 @@
 /Users/adrianharland/Documents/JitsTracker/JitsTrackerBE/JitsTrackerBE/obj/Debug/net8.0/JitsTrackerBE.pdb
 /Users/adrianharland/Documents/JitsTracker/JitsTrackerBE/JitsTrackerBE/obj/Debug/net8.0/JitsTrackerBE.genruntimeconfig.cache
 /Users/adrianharland/Documents/JitsTracker/JitsTrackerBE/JitsTrackerBE/obj/Debug/net8.0/ref/JitsTrackerBE.dll
+/Users/adrianharland/Documents/JitsTracker/JitsTrackerBE/JitsTrackerBE/obj/Debug/net8.0/JitsTrackerBE.sourcelink.json

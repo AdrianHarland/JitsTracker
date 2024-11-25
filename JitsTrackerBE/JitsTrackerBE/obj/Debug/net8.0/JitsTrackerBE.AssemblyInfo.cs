@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("JitsTrackerBE")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9c26cc157dc19553746d626d8de36688c862ffe7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f47ba7cec7e2c42026b6d8dc5cd8348f8b7c13c6")]
 [assembly: System.Reflection.AssemblyProductAttribute("JitsTrackerBE")]
 [assembly: System.Reflection.AssemblyTitleAttribute("JitsTrackerBE")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

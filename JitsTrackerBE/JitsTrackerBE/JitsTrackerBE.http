@@ -4,3 +4,4 @@ GET {{JitsTrackerBE_HostAddress}}/weatherforecast/
 Accept: application/json
 
 ###
+test
