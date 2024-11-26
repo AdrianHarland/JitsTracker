@@ -10,11 +10,11 @@ namespace JitsTrackerBE.API.Controllers;
 public class TechniqueGeneratorController : ControllerBase
 {
 
-    private readonly TechniqueGeneratorHandler _handler;
-
-    public TechniqueGeneratorController(TechniqueGeneratorHandler handler)
+    private readonly TechniqueGeneratorHandler _techniqueHandler;
+ 
+    public TechniqueGeneratorController(TechniqueGeneratorHandler techniqueHandler)
     {
-        _handler = handler;
+        _techniqueHandler = techniqueHandler;
     }
     
     /// <summary>
@@ -24,7 +24,8 @@ public class TechniqueGeneratorController : ControllerBase
     [ProducesResponseType(typeof(TechniqueGeneratorDto), StatusCodes.Status200OK)]
     public IActionResult GetRandomTechniqueAsync()
     {
-        var results = _handler.TechniqueGenerator();
+        var results= _techniqueHandler.TechniqueGenerator();
         return Ok(results);
     }
+    
 }
