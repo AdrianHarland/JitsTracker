@@ -4,7 +4,7 @@ public class MoveGeneratorDto
 {
     public IEnumerable<SubsDto> Subs { get; set; } = Enumerable.Empty<SubsDto>();
     public IEnumerable<TakedownsDto> Takedowns { get; set; } = Enumerable.Empty<TakedownsDto>();
-    public IEnumerable<PinsDTO> Pins { get; set; } = Enumerable.Empty<PinsDTO>();
+    public IEnumerable<PinsDtO> Pins { get; set; } = Enumerable.Empty<PinsDtO>();
     public IEnumerable<SweepsDto> Sweeps { get; set; } = Enumerable.Empty<SweepsDto>();
 
 }
@@ -22,7 +22,7 @@ public class TakedownsDto
  public string AnklePick { get; set; }
 }
 
-public class PinsDTO
+public class PinsDtO
 {
     public string Sidecontrol { get; set; }
     public string Mount { get; set; }
