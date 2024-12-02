@@ -1,9 +1,13 @@
 services:
   mysql:
     image: mysql/mysql-server:latest
+    volumes:
+      - my-db-data:/var/lib/mysql
     environment:
       MYSQL_DATABASE: "JitsTrackerBE"
       MYSQL_ROOT_PASSWORD: "password123"
       MYSQL_ROOT_HOST: "%"
     ports:
       - "3306:3306"
+volumes:
+  my-db-data: 

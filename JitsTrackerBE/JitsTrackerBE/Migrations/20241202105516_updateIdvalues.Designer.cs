@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JitsTrackerBE.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241128115900_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241202105516_updateIdvalues")]
+    partial class updateIdvalues
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,6 +32,7 @@ namespace JitsTrackerBE.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<int>("TechniqueId")
+                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -45,8 +46,9 @@ namespace JitsTrackerBE.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    b.Property<int>("TechniqueName")
-                        .HasColumnType("int");
+                    b.Property<string>("TechniqueName")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.HasKey("Id");
 
