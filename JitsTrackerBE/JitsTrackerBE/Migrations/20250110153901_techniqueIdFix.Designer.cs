@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JitsTrackerBE.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20241202105516_updateIdvalues")]
-    partial class updateIdvalues
+    [Migration("20250110153901_techniqueIdFix")]
+    partial class techniqueIdFix
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -32,10 +32,11 @@ namespace JitsTrackerBE.Migrations
                         .HasColumnType("longtext");
 
                     b.Property<int>("TechniqueId")
-                        .IsRequired()
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("TechniqueId");
 
                     b.ToTable("Moves");
                 });
@@ -53,6 +54,22 @@ namespace JitsTrackerBE.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Techniques");
+                });
+
+            modelBuilder.Entity("JitsTrackerBE.Data.Enitities.MoveEntity", b =>
+                {
+                    b.HasOne("JitsTrackerBE.Data.Enitities.TechniqueEntity", "TechniqueId")
+                        .WithMany("Moves")
+                        .HasForeignKey("TechniqueId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("TechniqueId");
+                });
+
+            modelBuilder.Entity("JitsTrackerBE.Data.Enitities.TechniqueEntity", b =>
+                {
+                    b.Navigation("Moves");
                 });
 #pragma warning restore 612, 618
         }
