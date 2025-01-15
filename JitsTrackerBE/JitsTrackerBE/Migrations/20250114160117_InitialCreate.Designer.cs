@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace JitsTrackerBE.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250110153901_techniqueIdFix")]
-    partial class techniqueIdFix
+    [Migration("20250114160117_InitialCreate")]
+    partial class InitialCreate
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -58,13 +58,13 @@ namespace JitsTrackerBE.Migrations
 
             modelBuilder.Entity("JitsTrackerBE.Data.Enitities.MoveEntity", b =>
                 {
-                    b.HasOne("JitsTrackerBE.Data.Enitities.TechniqueEntity", "TechniqueId")
+                    b.HasOne("JitsTrackerBE.Data.Enitities.TechniqueEntity", "Technique")
                         .WithMany("Moves")
                         .HasForeignKey("TechniqueId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("TechniqueId");
+                    b.Navigation("Technique");
                 });
 
             modelBuilder.Entity("JitsTrackerBE.Data.Enitities.TechniqueEntity", b =>

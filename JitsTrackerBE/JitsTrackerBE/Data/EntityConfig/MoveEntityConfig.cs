@@ -14,7 +14,7 @@ public class MoveEntityConfig : IEntityTypeConfiguration<MoveEntity>
             .ValueGeneratedOnAdd();
 
         builder
-            .HasOne(m => m.TechniqueId)
+            .HasOne(m => m.Technique)
             .WithMany(t => t.Moves)
             .HasForeignKey(m => m.TechniqueId)
             .IsRequired();
@@ -23,5 +23,4 @@ public class MoveEntityConfig : IEntityTypeConfiguration<MoveEntity>
             .Property(m => m.MoveName)
             .IsRequired();
     }
-    
 }

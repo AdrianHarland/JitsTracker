@@ -4,5 +4,6 @@ namespace JitsTrackerBE.Features.Moves;
 
 public interface IMoveGeneratorHandler
 {
-    Task<List<MoveEntity>> HandleAsync();
+    Task<MoveEntity> HandleAsync();
+
 }

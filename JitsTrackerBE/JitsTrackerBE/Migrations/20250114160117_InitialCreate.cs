@@ -35,7 +35,7 @@ namespace JitsTrackerBE.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    TechniqueIdId = table.Column<int>(type: "int", nullable: false),
+                    TechniqueId = table.Column<int>(type: "int", nullable: false),
                     MoveName = table.Column<string>(type: "longtext", nullable: false)
                         .Annotation("MySql:CharSet", "utf8mb4")
                 },
@@ -43,8 +43,8 @@ namespace JitsTrackerBE.Migrations
                 {
                     table.PrimaryKey("PK_Moves", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Moves_Techniques_TechniqueIdId",
-                        column: x => x.TechniqueIdId,
+                        name: "FK_Moves_Techniques_TechniqueId",
+                        column: x => x.TechniqueId,
                         principalTable: "Techniques",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
@@ -52,9 +52,9 @@ namespace JitsTrackerBE.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Moves_TechniqueIdId",
+                name: "IX_Moves_TechniqueId",
                 table: "Moves",
-                column: "TechniqueIdId");
+                column: "TechniqueId");
         }
 
         /// <inheritdoc />

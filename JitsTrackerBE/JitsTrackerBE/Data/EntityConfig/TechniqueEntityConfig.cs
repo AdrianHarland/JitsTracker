@@ -18,7 +18,7 @@ public class TechniqueEntityConfig : IEntityTypeConfiguration<TechniqueEntity>
             .IsRequired();
         
         builder.HasMany(t => t.Moves)
-            .WithOne(m => m.TechniqueId)
+            .WithOne(m => m.Technique)
             .IsRequired();
     }
     

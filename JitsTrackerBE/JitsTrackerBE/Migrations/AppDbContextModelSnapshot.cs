@@ -28,12 +28,12 @@ namespace JitsTrackerBE.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("TechniqueIdId")
+                    b.Property<int>("TechniqueId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TechniqueIdId");
+                    b.HasIndex("TechniqueId");
 
                     b.ToTable("Moves");
                 });
@@ -55,13 +55,13 @@ namespace JitsTrackerBE.Migrations
 
             modelBuilder.Entity("JitsTrackerBE.Data.Enitities.MoveEntity", b =>
                 {
-                    b.HasOne("JitsTrackerBE.Data.Enitities.TechniqueEntity", "TechniqueId")
+                    b.HasOne("JitsTrackerBE.Data.Enitities.TechniqueEntity", "Technique")
                         .WithMany("Moves")
-                        .HasForeignKey("TechniqueIdId")
+                        .HasForeignKey("TechniqueId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("TechniqueId");
+                    b.Navigation("Technique");
                 });
 
             modelBuilder.Entity("JitsTrackerBE.Data.Enitities.TechniqueEntity", b =>

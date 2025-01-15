@@ -16,13 +16,20 @@ public class MoveGeneratorHandler : IMoveGeneratorHandler
           _dbContext = dbContext;
      }
      
-     public async Task<List<MoveEntity>> HandleAsync()
+     public async Task<MoveEntity> HandleAsync()
+     
      {
-          var totalCount = await _dbContext.Moves.CountAsync();
-          var randomIndex = new Random().Next(0, totalCount);
-          var result = _dbContext.Techniques
-               .Include(m => m.Moves)
-               .ToList();
+          
+          var result = await _dbContext.Moves
+               .Include(m => m.Technique) 
+               .Take(1)
+               .FirstOrDefaultAsync();
+          return result;
+          
+          // var totalCount = await _dbContext.Moves.CountAsync();
+          // var randomIndex = new Random().Next(0, totalCount);
+          // var result = _dbContext.Moves
+          //      .ToList();
           // var authorWithBooks = context.Authors
           //      .Include(a => a.Books) // Include related Books
           //      .FirstOrDefault(a => a.Name == "J.K. Rowling");
@@ -35,6 +42,6 @@ public class MoveGeneratorHandler : IMoveGeneratorHandler
           // {
           //      throw new InvalidOperationException("No moves try again");
           // }
-          return new List<MoveEntity>();
+          // return result;
      }
 }
