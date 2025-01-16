@@ -20,7 +20,7 @@ public class TechniqueGeneratorController : ControllerBase
     /// </summary>
     [HttpGet]
     [ProducesResponseType(typeof(TechniqueGeneratorHandler), StatusCodes.Status200OK)]
-    public async Task<ActionResult<TechniqueEntity>> GetRandomTechniqueAsync()
+    public async Task<ActionResult<TechniqueDto>> GetRandomTechniqueAsync()
     {
         var randomTechnique = await _techniqueHandler.HandleAsync();
         return Ok(randomTechnique);

@@ -1,12 +1,11 @@
 using JitsTrackerBE.Data;
-using JitsTrackerBE.Features.Moves;
 using JitsTrackerBE.Features.Techniques;
 using Microsoft.EntityFrameworkCore;
 
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
-builder.Services.AddScoped<IMoveGeneratorHandler, MoveGeneratorHandler>();
+//builder.Services.AddScoped<IMoveGeneratorHandler, MoveGeneratorHandler>();
 builder.Services.AddScoped<ITechniqueGeneratorHandler, TechniqueGeneratorHandler>();
 
 string connection = builder.Configuration.GetConnectionString("JitsTrackerBE");

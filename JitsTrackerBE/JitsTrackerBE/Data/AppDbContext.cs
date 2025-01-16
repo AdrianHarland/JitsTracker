@@ -1,4 +1,5 @@
 using JitsTrackerBE.Data.Enitities;
+using JitsTrackerBE.Features.Techniques;
 
 namespace JitsTrackerBE.Data;
 
