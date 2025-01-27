@@ -6,6 +6,5 @@ public class TechniqueEntity
     
     public string TechniqueName { get; set; }
     
-    // [System.Text.Json.Serialization.JsonIgnore]
     public ICollection<MoveEntity> Moves { get; set; } = new List<MoveEntity>();
 }
