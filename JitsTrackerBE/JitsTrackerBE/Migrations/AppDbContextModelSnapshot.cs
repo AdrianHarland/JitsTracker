@@ -33,6 +33,8 @@ namespace JitsTrackerBE.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("TechniqueId");
+
                     b.ToTable("Moves");
                 });
 
@@ -49,6 +51,22 @@ namespace JitsTrackerBE.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Techniques");
+                });
+
+            modelBuilder.Entity("JitsTrackerBE.Data.Enitities.MoveEntity", b =>
+                {
+                    b.HasOne("JitsTrackerBE.Data.Enitities.TechniqueEntity", "Technique")
+                        .WithMany("Moves")
+                        .HasForeignKey("TechniqueId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Technique");
+                });
+
+            modelBuilder.Entity("JitsTrackerBE.Data.Enitities.TechniqueEntity", b =>
+                {
+                    b.Navigation("Moves");
                 });
 #pragma warning restore 612, 618
         }
